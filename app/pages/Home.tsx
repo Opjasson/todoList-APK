@@ -1,14 +1,27 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import React from "react";
+import { Button, Text, View } from "react-native";
+import {useNavigation} from "@react-navigation/native";
+import data from "../assets/data/data.json"
+
 
 const Home = () => {
-  return (
-    <View>
-        <Text>
-            Hallo world
-        </Text>
-    </View>
-  )
-}
+    const navigation = useNavigation()
+    const datas = data
 
-export default Home
+    return (
+        <View>
+            {datas.map((item) =>
+            (
+                <View>
+                    <Text>{item.nama}</Text>
+                    <Text>{item.alamat}</Text>
+                    <Text>{item.email}</Text>
+                </View>
+            )
+               )}
+            <Button title="see list" onPress={() => navigation.navigate('List')}/>
+        </View>
+    );
+};
+
+export default Home;
