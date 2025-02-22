@@ -8,6 +8,7 @@ import {
 import {createNativeStackNavigator} from "@react-navigation/native-stack"
 import Home from './pages/Home';
 import List from './pages/List';
+import { StatusBar } from 'react-native';
 const App = () => {
     const Stack = createNativeStackNavigator()
   return (
